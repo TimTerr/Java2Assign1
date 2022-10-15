@@ -1,0 +1,2 @@
+public class MovieAnalyzer {
+}
