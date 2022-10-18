@@ -14,15 +14,17 @@ public class MovieAnalyzer{
             List<String> row;
             if((row = divide(str)) == null) break;
             else {
-                System.out.println(header);
-                System.out.println(row);
                 Map<String, String> m = new HashMap<>();
                 for (int i = 1; i < header.size(); i++) {
+                    //if(row.get(i) == null) System.out.println("null");
                     m.put(header.get(i), row.get(i));
                 }
-                movies.add(new Movies(m));
+                this.movies.add(new Movies(m));
             }
         }
+//        for (Movies m: movies) {
+//            System.out.println(movies.size());
+//        }
 //        FileInputStream input = new FileInputStream(dataset_past);
 //        int n = 0;
 //        ArrayList<Byte> m = new ArrayList<>();
@@ -47,7 +49,7 @@ public class MovieAnalyzer{
                 while(sb.charAt(i)!='"') i++;
                 end = i;
                 s.add(sb.substring(begin, end+1));
-                System.out.println(sb.substring(begin, end+1));
+                //System.out.println(sb.substring(begin, end+1));
             }
             else if(sb.charAt(i) == ','){
                 if(i == sb.length()-1){
@@ -60,13 +62,13 @@ public class MovieAnalyzer{
                     while(sb.charAt(i)!='"') i++;
                     end = i;
                     s.add(sb.substring(begin, end+1));
-                    System.out.println(sb.substring(begin, end+1));
+                    //System.out.println(sb.substring(begin, end+1));
                     continue;
                 }
                 while(sb.charAt(i) != ',')i++;
                 i--;end = i;
                 s.add(sb.substring(begin, end+1));
-                System.out.println(sb.substring(begin, end+1));
+                //System.out.println(sb.substring(begin, end+1));
             }
         }
         return s;
@@ -80,6 +82,6 @@ class Movies{
     Map<String, String> map;
     public Movies(Map<String, String> m){
         this.map = m;
-        System.out.println(map);
+        //System.out.println(map);
     }
 }
